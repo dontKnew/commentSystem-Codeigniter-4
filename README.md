@@ -13,7 +13,7 @@
 
 ## Demo
   <img src="https://github.com/dontKnew/commentSystem-Codeigniter-4/blob/master/public/image/demo.png"/>
-  <img src="https://github.com/dontKnew/commentSystem-Codeigniter-4/blob/master/public/image/demo1.png/>
+  <img src="https://github.com/dontKnew/commentSystem-Codeigniter-4/blob/master/public/image/demo1.png" />
 
 
 ## Author : https://github.com/dontKnew/
