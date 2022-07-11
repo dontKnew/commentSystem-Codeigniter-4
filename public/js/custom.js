@@ -51,7 +51,7 @@ $(document).ready(function(){
                       </small> \
                       <div class="my-1" id="replyComments' + response.data[i].id+ '"></div>\
                       <div style="margin-left:60px" class="d-flex justify-content-start visually-hidden" id="showReplyBox' + response.data[i].id+ '">\
-                          <input type="text" id="commentReply" class="form-control mx-2" placeholder="Write a reply..."> \
+                          <input type="text" id="commentReply' + response.data[i].id+ '" class="form-control mx-2" placeholder="Write a reply..."> \
                           <input type="button" id="submitReply" value="Post" data-commentid= "' + response.data[i].id+ '" class="btn btn-warning">\
                       </div>\
                   </div>';
@@ -101,8 +101,8 @@ $(document).ready(function(){
   
     // add Reply comment
     $(document).on("click", '#submitReply', function(evt){
-      let comment = $("#commentReply").val();
-      let replyid = $(this).attr('data-commentid');
+        let replyid = $(this).attr('data-commentid');
+        let comment = $("#commentReply"+ replyid).val();
       $("#replyComments"+replyid).html('');
       if(comment==''){
           $.notify("comment input is required", "error");         
@@ -118,7 +118,7 @@ $(document).ready(function(){
           data:{"comment":comment, "reply_id":replyid},
           success:function(response){
               if(response.status == 'OK'){
-                  $("#commentReply").val('');
+                  $("#commentReply"+replyid).val('');
                   // get Replies
                   $.ajax({
                       type:"GET",
